@@ -1,0 +1,254 @@
+{% incude 'AdminLayouts/loginHeader.html'%}
+{% load static %}
+
+    <link href="{% static 'plugins/datatables/dataTables.css'%}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'plugins/datepicker/bootstrap-datepicker.css'%}" rel='stylesheet' type='text/css' />
+
+    <style>
+        .modal-dialog-centered{
+           margin-top: 190px
+        }
+
+        .product-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .store-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+    </style>
+
+
+<div id="page-content">
+    <div id='wrap'>
+        <div id="page-heading">
+            <ol class="breadcrumb">
+                <li><a href="">Dashboard</a></li>
+                <li>Inventory</li>
+                <li class="active">Purchase</li>
+            </ol>
+
+            <h1>Purchase</h1>
+
+        </div>
+
+        <div class="container">
+
+             
+
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                          <h4>Purchase New product for Store</h4>
+                      </div>
+                      <div class="panel-body">
+                    <form class="form-horizontal" action=""  method="POST" >
+                       {%  csrf_token %}
+
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Product</label>
+                            <div class="col-sm-3">
+                             <select name="product_id" id="type" class="form-control">
+                                  
+                                  <option value="">#</option>
+                                  
+                              </select>
+                            </div>
+                        </div>
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Supplier</label>
+                            <div class="col-sm-3">
+                             <select name="supplier_id" id="type" class="form-control">
+                                  
+                                  <option value="">#</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Receiving Store</label>
+                            <div class="col-sm-3">
+                             <select name="store_id" id="type" class="form-control">
+                                  
+                                  <option value="">#</option>
+                                  
+                              </select>
+                            </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Quantity Received</label>
+                            <div class="col-sm-3">
+                              <input name="number_received" type="text" class="form-control" required>
+                              
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                             
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label">Purchase Date</label>
+                            <div class="col-sm-3">
+                                <div id="purchase_date" class="input-group date" >
+                                    <input type="text" name="purchase_date" class="form-control">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                                
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                          </div>
+
+
+                         <div class="panel-footer">
+                            <div class="row">
+                              <div class="col-sm-6 col-sm-offset-3">
+                                <div class="btn-toolbar">
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-4">
+                                            <button type="submit" class="btn btn-primary">Create Store</button>
+                                             <button type="reset" class="btn btn-default">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                         </div>
+
+
+
+                        </form>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+
+
+
+
+            <br/> <br/> <br/>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Purchase History</h4>
+                        <div class="options">
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                    <table class="table table-bordered table-hover table-striped datatables" id="example">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Supplier</th>
+                            <th>Receiving Store </th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        
+                        <tr
+                         @if($purchase->deleted_at)
+                          class="deleted"
+                         
+                            </td>
+                        </tr>
+                        
+
+                        </tbody>
+                    </table>
+
+
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div> <!-- container -->
+    </div> <!--wrap -->
+</div>
+
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/dataTables.bootstrap.js' %}"></script>
+<script src="{% static 'plugins/form-jasnyupload/fileinput.js' %}"></script>
+
+<script src="{% static 'plugins/datepicker/bootstrap-datepicker.js'%}"></script>
+
+
+
+
+<script>
+
+
+// -------------------------------
+// Initialize Data Tables
+// -------------------------------
+
+$(document).ready(function() {
+    $('.datatables').dataTable({
+        "sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        "sPaginationType": "bootstrap",
+        "oLanguage": {
+            "sLengthMenu": "_MENU_ records per page",
+            "sSearch": ""
+        }
+    });
+    $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search...');
+    $('.dataTables_length select').addClass('form-control');
+});
+
+
+$('#purchase_date input').datepicker({
+    format: "yyyy-mm-dd",
+    orientation: "top right",
+    endDate: '-0d'
+});
+
+
+
+  function ConfirmDelete()
+  {
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+    return true;
+  else
+    return false;
+  }
+
+</script>
+
+
+
+

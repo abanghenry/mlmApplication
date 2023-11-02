@@ -1,0 +1,170 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/datatables/dataTables.css'%}" />
+    <link rel="stylesheet" href="{% static'css/styles.css?=121'% }" >
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+
+    <link href="{% static 'demo/variations/default.css' %}"  rel='stylesheet' type='text/css' media='all' id='styleswitcher'>
+    <link href="{% static 'demo/variations/default.css' %}"  rel='stylesheet' type='text/css' media='all' id='headerswitcher'>
+
+    <link href="{ %  static 'plugins/form-daterangepicker/daterangepicker-bs3.css'%} "  rel='stylesheet' type='text/css'/>
+    <link href="{ %  static 'plugins/fullcalendar/fullcalendar.css'%}" rel='stylesheet' type='text/css' />
+    <link href="{ %  static 'plugins/form-markdown/css/bootstrap-markdown.min.css'%}" rel='stylesheet' type='text/css' />
+    <link href="{ %  static 'plugins/codeprettifier/prettify.css'%}" rel='stylesheet' type='text/css' />
+    <link href="{ %  static 'plugins/form-toggle/toggles.css'%}" rel='stylesheet' type='text/css'/>
+    <style>
+        .modal-dialog-centered{
+            margin-top: 190px
+        }
+
+        .product-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .deleted-row {
+            text-decoration: line-through;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<div  w3-include-html="app.html"></div>
+<body>
+    <div  w3-include-html="app.html"></div>
+
+    
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="admin/banks">Bank</a></li>
+                </ol>
+
+                <h1>Users Bank Accounts</h1>
+
+            </div>
+
+            <div class="container">
+
+              
+                  
+                
+               
+                    
+
+                <div  w3-include-html="app.html"></div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Bank Accounts</h4>
+                                <div class="options">
+
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                              <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped  datatables" id="example">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Bank Name</th>
+                                        <th>Account Name</th>
+                                        <th>Account Number</th>
+                                        <th>Country</th>
+                                        <th>Type</th>
+                                        <th>Default</th>
+                                        <th>Currency</th>
+                                        <th>Created</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                 
+                                </table>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div>
+
+
+
+    
+    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js'%}"></script>
+    <script src="{% static 'plugins/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'plugins/form-jasnyupload/fileinput.js' %}"></script>
+
+
+
+
+    <script>
+
+        // -------------------------------
+        // Initialize Data Tables
+        // -------------------------------
+
+        $(document).ready(function() {
+            $('.datatables').dataTable({
+                "sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page",
+                    "sSearch": ""
+                }
+            });
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search...');
+            $('.dataTables_length select').addClass('form-control');
+        });
+
+
+
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+    </script>
+
+
+</body>
+</html>
+
+ 
+
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+

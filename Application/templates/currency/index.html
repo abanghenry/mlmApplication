@@ -1,0 +1,239 @@
+{% incude 'AdminLayouts/loginHeader.html'%}
+{% load static %}
+
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/datatables/dataTables.css'%}" />
+
+
+<div id="page-content">
+    <div id='wrap'>
+        <div id="page-heading">
+            <ol class="breadcrumb">
+                <li><a href="">Dashboard</a></li>
+                <li>Settings</li>
+                <li class="active">Currencies</li>
+            </ol>
+
+            <h1>Currencies</h1>
+
+        </div>
+
+        <div class="container">
+
+              
+
+
+                   <div class="row">
+              <div class="col-xs-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Currencies</h4>
+                        <div class="options">
+
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p>You can sell in different currencies concurrently by setting them up below. Customers who visit your site can then choose to shop in their local currency.</p>
+
+                        <table class="table table-bordered table-hover table-striped datatables" id="example">
+                          <thead>
+                            <tr>
+                              <th>Currency Name</th>
+                              <th>Currency Code</th>
+                              <th>Prefix</th>
+                              <th>Suffix</th>
+                              <th>Format</th>
+                              <th>Base Conv. Rate</th>
+                              <th>PV Rate</th>
+                              <th></th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                         
+                               <td>
+                               <a href="">
+                                 <img src="/adminTemplate/img/edit.gif" alt="Edit" width="16" height="16" border="0">
+                               </a>
+
+                               </td>
+
+                               <td>
+                        
+                                </td>
+                            </tr>
+                        
+
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                          <h4>Add Additional Currency</h4>
+
+                      </div>
+                      <div class="panel-body">
+
+                        <br>
+                    <form class="form-horizontal" action=""  method="POST"  >
+                       { csrf_token}
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Currency Name</label>
+                            <div class="col-sm-3">
+                              <input name="name" type="text" class="form-control" id="focusedinput" placeholder="Currency Name">
+                               
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                            <div class="col-sm-3">
+                                <p class="help-block">eg. Naira.</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Currency Code</label>
+                            <div class="col-sm-3">
+                              <input name="code" type="text" class="form-control" id="focusedinput" placeholder="Currency Code">
+                              
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                            <div class="col-sm-3">
+                                <p class="help-block">eg. USD, GBP, etc...</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Prefix</label>
+                            <div class="col-sm-3">
+                              <input name="prefix" type="text" class="form-control" id="focusedinput" placeholder="prefix">
+                               
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="focusedinput" class="col-sm-3 control-label">Suffix</label>
+                            <div class="col-sm-3">
+                              <input name="suffix" type="text" class="form-control" id="focusedinput" placeholder="suffix">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="selector1" class="col-sm-3 control-label">Format</label>
+                            <div class="col-sm-3">
+                              <select name="currency_format" id="currency_format" class="form-control">
+                                    <option value="1">1234.56</option>
+                                    <option value="2">1,234.56</option>
+                                    <option value="3">1.234,56</option>
+                                    <option value="4">1,234</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label">Base Conv. Rate</label>
+                            <div class="col-sm-3">
+                              <input name="BaseRate" type="text" class="form-control">
+                              
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                          </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">PV Conv. Rate</label>
+                            <div class="col-sm-3">
+                                <input name="pv_rate" type="text" class="form-control">
+                              
+                                    <span class="text-danger">
+                                        <strong>#</strong>
+                                    </span>
+                                
+                            </div>
+                        </div>
+
+
+
+                         <div class="panel-footer">
+                            <div class="row">
+                              <div class="col-sm-6 col-sm-offset-3">
+                                <div class="btn-toolbar">
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-4">
+                                            <button type="submit" class="btn btn-primary"> Add Currency</button>
+                                             <button type="reset" class="btn btn-default"> Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                         </div>
+
+
+
+
+
+                        </form>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div> <!-- container -->
+    </div> <!--wrap -->
+</div> <!-- page-content -->
+
+
+
+
+
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'plugins/datatables/dataTables.bootstrap.js' %}"></script>
+<script src="{% static 'demo/demo-datatables.js' %}"></script>
+
+<script>
+
+  function ConfirmDelete()
+  {
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+    return true;
+  else
+    return false;
+  }
+
+</script>
+
+
+
+

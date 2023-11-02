@@ -1,0 +1,129 @@
+
+{% incude 'AdminLayouts/loginHeader.html'%}
+{% load static %}
+
+
+
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/form-xeditable/bootstrap3-editable/css/bootstrap-editable.css' %}" />
+
+
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="index.php">Home</a></li>
+                    <li class="active">{{ $pageTitle }}</li>
+                </ol>
+
+                <h1>{{ $pageTitle }}</h1>
+
+            </div>
+
+            <div class="container">
+               
+                <div class="row">
+                <div class="col-md-12">
+
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <h4>Setting</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="popovers">
+                                <form action="" method="POST"  class="form-horizontal row-border">
+
+                              
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-3 control-label">#</label>
+                                                <div class="col-sm-3">
+                                                    <input name="{{$setting->key}}" type="text" class="form-control"
+                                                           value="{{$setting->value}}" required>
+                                                  
+                                                        <span class="text-danger">
+                                                            <strong>#</strong>
+                                                        </span>
+                                                   
+                                                    <p class="help-block">#</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-3 control-label">#</label>
+                                                <div class="col-sm-3">
+                                                    <input name="{{$setting->key}}" type="date" class="form-control"
+                                                           value="{{$setting->value}}" required>
+                                                    
+                                                        <span class="text-danger">
+                                                            <strong>#</strong>
+                                                        </span>
+                                                    
+                                                    <p class="help-block">#</p>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-3 control-label">#</label>
+                                                <div class="col-sm-3">
+                                                    <select name="" class="form-control">
+                                                        
+                                                            <option value="" >
+                                                            
+                                                            </option>
+                                                    
+                                                    </select>
+                                                    
+                                                        <span class="text-danger">
+                                                            <strong>#</strong>
+                                                        </span>
+                                                    
+                                                    <p class="help-block">#</p>
+                                                </div>
+                                            </div>
+                                      
+                                            <div class="form-group">
+                                                <label for="focusedinput" class="col-sm-3 control-label"></label>
+                                                <div class="col-sm-3">
+                                                    <textarea name="{{$setting->key}}"  rows="6" class="form-control" required>{{$setting->value}}</textarea>
+                                                    
+                                                        <span class="text-danger">
+                                                            <strong>#</strong>
+                                                        </span>
+                                                    
+                                                    <p class="help-block">#</p>
+                                                </div>
+                                            </div>
+                   
+
+
+                                
+
+
+                                    <div class="form-group">
+                                        <label for="focusedinput" class="col-sm-3 control-label"></label>
+                                        <div class="col-sm-3">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'plugins/form-daterangepicker/moment.min.js' % }"></script>
+    <script src="{% static 'plugins/form-xeditable/bootstrap3-editable/js/bootstrap-editable.min.js'% }"></script>
+    <script src="{% static 'demo/demo-xeditable.js' %}"></script>
+

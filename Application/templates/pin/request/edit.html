@@ -1,0 +1,165 @@
+{% include "AdminLayouts/app.html" %}
+{% load static %}
+
+
+
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="">Pin Request</a></li>
+                    <li class="active"><a href="#">Process Pin Request</a> </li>
+                </ol>
+
+                <h1>fullname , username</h1>
+
+            </div>
+
+
+
+            <div class="container">
+
+               
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-sky">
+                            <div class="panel-heading">
+                                <h4>Request Details</h4>
+                                <div class="options">
+                                    <a href="javascript:;" class="panel-collapse"><i class="fa fa-chevron-down"></i></a>
+                                </div>
+                            </div>
+                            <div class="panel-body collapse in">
+                                <!--  Userss -->
+                                <br/>
+                                <table class="table table-bordered table-condensed">
+                                    <tr>
+                                        <td><b>Username</b></td><td><b>Name</b></td><td ><b>Email</b></td>
+                                    </tr>
+                                    <tr>
+                                      
+                                    <tr>
+                                        <td><b>Package Name</b></td>
+                                        <td><b>Quantity</b></td>
+                                        <td><b>Amount Paid</b></td>
+                                    </tr>
+                                    <tr>
+                                        
+                                    <tr>
+                                        <td colspan="3">&nbsp</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Payment Mode</b></td>
+                                        <td><b>Account Details </b></td>
+                                        <td><b>Payment Details</b></td>
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><b>Status</b></td>
+                                        <td><b>Request Date </b></td>
+                                        <td><b>Teller</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                                <span class="label label-warning">pending</span>
+                                         
+                                                <span class="label label-success">approved</span>
+                                         
+                                                <span class="label label-danger">cancelled</span>
+                                            
+                                        </td>
+                                        <td>#</td>
+                                        <td>
+                                            <a href="teller">
+                                                <i class="fa fa-file-image-o"></i>
+                                            </a>
+                                        <td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td colspan="3">&nbsp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                                <form action="" method="post"
+                                                      name="approveRequestForm" id="approveRequestForm" >
+                                                    {csrf_token %}
+                                                    <input name="_method" type="hidden" value="PUT">
+                                                    <input type="hidden" name="pinRequestID" id="pinRequestID"  value="{{$pin_request->id}}">
+                                                    <input type="hidden" name="task"  id="task" value="approve">
+                                                    <div class="btn-container">
+                                                        <input  value="Approve this request" onclick="approveRequest()" class="btn btn-success" type="button">
+                                                    </div>
+                                                </form>
+                                      
+                                                Processed Request
+                                            
+                                        </td>
+                                        <td>
+                                           pending
+                                                <form action="" method="POST"
+                                                  name="cancelRequestForm" id="cancelRequestForm" >
+                                                {% csrf_token %}
+                                                <input name="_method" type="hidden" value="PUT">
+                                                <input type="hidden" name="pinRequestID" id="pinRequestID"  value="">
+                                                <input type="hidden" name="task"  id="task" value="cancel">
+                                                <div class="btn-container">
+                                                    <input  value="Cancel Request" onclick="cancelRequest()" class="btn btn-danger" type="button">
+                                                </div>
+
+                                            </form>
+                                         
+                                                Processed Request
+                                         
+                                        </td>
+
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div> <!-- page-content -->
+
+
+    <script type="text/javascript">
+
+        var formApprove = document.approveRequestForm;
+        var formCancel = document.cancelRequestForm;
+
+
+        function approveRequest(){
+            if (confirm("Are you sure you want to Approve this request?, It will create   Pins for ")){
+                formApprove.task.value='approve';
+                formApprove.submit();
+            }
+        }
+
+        function cancelRequest(){
+            if (confirm("Are you sure you want to Cancel  this Pin request?")){
+                formCancel.task.value='cancel';
+                formCancel.submit();
+            }
+        }
+
+
+    </script>
+

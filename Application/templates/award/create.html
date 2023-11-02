@@ -1,0 +1,96 @@
+{% include "AdminLayouts/app.html" %}
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li>Award</li>
+                    <li class="active"><a href="award">create Award</a> </li>
+                </ol>
+                <h1>Award</h1>
+            </div>
+
+            <div class="container">
+
+              
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Create Award</h4>
+
+                            </div>
+                            <div class="panel-body">
+
+                                <br>
+                                <form class="form-horizontal" action="'admin/award" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        <label for="focusedinput" class="col-sm-3 control-label">Award Name</label>
+                                        <div class="col-sm-3">
+                                            <input name="name" type="text" class="form-control" value="old'name')}}" required>
+                                        
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Point Value</label>
+                                        <div class="col-sm-3">
+                                            <input name="pv" type="number" class="form-control"  value="" required>
+                                          
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="focusedinput" class="col-sm-3 control-label">Cash Equivalent</label>
+                                        <div class="col-sm-3">
+                                            <input name="cash_equivalent" type="number" class="form-control" value="" required>
+                                       </div>
+                                    </div>
+
+                                <br/><br/>
+
+
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <div class="btn-toolbar">
+                                                    <div class="form-group">
+                                                        <div class="col-md-6 col-md-offset-4">
+                                                            <button type="submit" class="btn btn-primary"> Save</button>
+                                                            &nbsp;&nbsp;
+                                                            <button type="reset" class="btn btn-default"> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div> <!-- page-content -->
+
+
+
+
+
+
+
+    <style>
+        .help-block {
+            display: block;
+            color: #a81515 !important;
+        }
+    </style>
+
+
+

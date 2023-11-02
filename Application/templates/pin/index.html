@@ -1,0 +1,161 @@
+{% include "AdminLayouts/app.html" %}
+{% load static %}
+
+
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/datatables/dataTables.css'%}" />
+    <style>
+        .modal-dialog-centered{
+            margin-top: 190px
+        }
+
+        .product-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+    </style>
+
+
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="index.php">Dashboard</a></li>
+                    <li class="active">Pin</li>
+                </ol>
+
+                <h1>pageTitle</h1>
+
+            </div>
+
+            <div class="container">
+
+              
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>pageTitle</h4>
+                                <div class="options">
+
+                                </div>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="pull-right" style="margin-bottom: 20px">
+                                    <a href="{{ url('admin/pin/create') }}" class="btn btn-primary">Create New Pin</a>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <table class="table table-bordered table-hover table-striped datatables" id="example">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Pin Number</th>
+                                        <th>Package Name</th>
+                                        <th>Owner </th>
+                                        <th>Status</th>
+                                        <th>Used for</th>
+                                        <th>Created</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                   
+                                        
+                                            <td>
+                                              
+                                                    <span class="label label-success">Unused</span>
+                                                
+                                                     <span class="label label-info">Used</span>
+                                                
+                                                    <span class="label label-danger">cancelled</span>
+                                                @
+                                            </td>
+                                            <td></td>
+
+                                            <td></td>
+
+                                            <td>
+                                                <a href="">
+                                                    <img src="/adminTemplate/img/edit.gif" alt="Edit" width="16" height="16" borders="0">
+                                                </a>
+
+                                            </td>
+
+           
+
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div>
+@endsection
+
+
+
+@section('scripts')
+    <script src="{{ URL::asset('adminTemplate/plugins/datatables/jquery.dataTables.min.js')    }}"></script>
+    <script src="{{ URL::asset('adminTemplate/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('adminTemplate/plugins/form-jasnyupload/fileinput.js') }}"></script>
+
+
+
+
+    <script>
+
+        // -------------------------------
+        // Initialize Data Tables
+        // -------------------------------
+
+        $(document).ready(function() {
+            $('.datatables').dataTable({
+                "sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page",
+                    "sSearch": ""
+                }
+            });
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search...');
+            $('.dataTables_length select').addClass('form-control');
+        });
+
+
+
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+    </script>
+
+
+
+@stop

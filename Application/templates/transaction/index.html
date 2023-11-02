@@ -1,0 +1,253 @@
+{% incude 'AdminLayouts/loginHeader.html'%}
+{% load static %}
+
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/datatables/dataTables.css'%}" />
+    <style>
+        .modal-dialog-centered{
+            margin-top: 190px
+        }
+
+        .product-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .deleted-row {
+            text-decoration: line-through;
+            background-color: red;
+        }
+
+    </style>
+
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="">Dashboard</a></li>
+                    <li class="active">transaction</li>
+                </ol>
+
+                <h1>Transaction</h1>
+
+            </div>
+
+            <div class="container">
+
+               
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-success" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">Total Transaction</div>
+                                <div class="pull-right"></div>
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right">#</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-orange" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">Pending</div>
+                               
+                                    <div class="pull-right">%  </div>
+                                @else
+                                    <div class="pull-right">0% </div>
+                                @endif
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right">#</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-brown" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">process</div>
+     
+                                    <div class="pull-right">% </div>
+                          
+                                    <div class="pull-right">0% </div>
+                             
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right"> #</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-midnightblue" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">Shipped</div>
+                         
+                                <div class="pull-right">% </div>
+                                
+                                    <div class="pull-right">0% </div>
+                              
+
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-midnightblue" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">Cancelled</div>
+                                
+                                    <div class="pull-right">% </div>
+                            
+                                    <div class="pull-right">0% </div>
+                                
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="info-tiles tiles-midnightblue" href="#">
+                            <div class="tiles-heading">
+                                <div class="pull-left">Fraud</div>
+                            
+                                    <div class="pull-right">% </div>
+                                
+                                    <div class="pull-right">0% </div>
+                            
+                            </div>
+                            <div class="tiles-body">
+                                <div class="pull-left"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="pull-right"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Transaction</h4>
+                                <div class="options">
+
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped  datatables" id="example">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Ref</th>
+                                            <th>Customer</th>
+                                            <th>Store</th>
+                                            <th># of Items Types</th>
+                                            <th>Total</th>
+                                            <th>Payment Method</th>
+                                            <th>Payment Status</th>
+                                            <th>Order Status</th>
+                                            <th>Order Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        
+                                            
+                                                    payment_status == "pending")
+                                                        <span class="label label-warning"># </span>
+                                                    payment_status =="paid")
+                                                        <span class="label label-success"> $</span>
+                                                    payment_status =="cancelled")
+                                                        <span class="label label-default"># </span>
+                                                    payment_status =="fraud"
+                                                        <span class="label label-danger">#  </span>
+                                                 
+                                                        <span class="label label-warning"># </span>
+                                                  
+                                                </td>
+                                                <td>
+                                                 status_order == "pending")
+                                                        <span class="label label-warning">#</span>
+                                                    status_order =="processing")
+                                                        <span class="label label-primary">#</span>
+                                                    >status_order =="shipped")
+                                                        <span class="label label-success">#</span>
+                                                -status_order =="cancelled")
+                                                        < class="label label-default">#</</span>
+                                        
+                                                        <span class="label label-warning">#</span>
+                                                
+                                                </td>
+                                                <td> </td>
+                                                <td>
+                                                    <a  class="btn btn-primary btn-xs" href="">View</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div>
+
+    <script src="{ % static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{ % static 'plugins/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{ % static 'plugins/form-jasnyupload/fileinput.js' %}"></script>
+
+
+
+
+    <script>
+
+        // -------------------------------
+        // Initialize Data Tables
+        // -------------------------------
+
+        $(document).ready(function() {
+            $('.datatables').dataTable({
+                "sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page",
+                    "sSearch": ""
+                }
+            });
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search...');
+            $('.dataTables_length select').addClass('form-control');
+        });
+
+
+
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+    </script>
+
+

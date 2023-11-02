@@ -1,0 +1,599 @@
+{% include "AdminLayouts/sideBarMenu.html " %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type= ' text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type= ' text/css' media='screen' href='{% static "styles.css" %} '>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/styles.css" %}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/custom.css" %}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/ie8.css"    %}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/app.css"    %}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/bootstrap.min.css " %}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/dark-theme.css"%}'>
+    <link rel="stylesheet" type="text/css" href=' {% static  "css/genealogy.css"%}'>
+   <link  rel="stylesheet" type="text/css" href=' {% static  "css/header-colors.css" %}'>
+   <link  rel="stylesheet" type="text/css" href=' {% static  "css/custom.css" % }'>
+    <script src='main.js'></script>
+
+
+</head>
+<body>
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li class='active'><a href="#">Dashboard</a></li>
+                     <li><a href="#"><i class="fa fa-tasks"></i>       <span>Pin Manager </span> </a> </li>
+                </ol>
+    
+                <h1>Dashboard</h1>
+                <div class="options">
+                    <div class="btn-toolbar">
+                        <button class="btn btn-default" id="daterangepicker2">
+                            <i class="fa fa-calendar-o"></i>
+                            <span class="hidden-xs hidden-sm">December 9, 2013 - January 8, 2014</span> <b class="caret"></b>
+                        </button>
+                        <div class="btn-group hidden-xs">
+                            <a href='#' class="btn btn-default dropdown-toggle" data-toggle='dropdown'><i class="fa fa-cloud-download"></i><span class="hidden-xs hidden-sm hidden-md"> Export as</span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Text File (*.txt)</a></li>
+                                <li><a href="#">Excel File (*.xlsx)</a></li>
+                                <li><a href="#">PDF File (*.pdf)</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-default hidden-xs"><i class="fa fa-cog"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="container">
+                    <div class="alert alert-success">
+                    </div>
+                    <div class="alert alert-danger">
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong>We Encountered some problems<br><br>
+                        <ul>
+                         
+                                <li>#</li>
+                
+                        </ul>
+                    </div>
+          
+    
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-success" href="#">
+                                    <div class="tiles-heading">Total User Bonuses</div>
+                                    <div class="tiles-body-alt">
+                                        <div class="text-center"><span class="text-top">₦</span></div>
+                                        <small>Total pins sold</small>
+                                    </div>
+                                    <div class="tiles-footer">more info</div>
+                                </a>
+                            </div>
+    
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-toyo" href="#">
+                                    <div class="tiles-heading">Total User Bonuses</div>
+                                    <div class="tiles-body-alt">
+                                        <div class="text-center"><span class="text-top">₦</span></div>
+                                        <small>User bonuses earned</small>
+                                    </div>
+                                    <div class="tiles-footer">more info</div>
+                                </a>
+                            </div>
+    
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-alizarin" href="#">
+                                    <div class="tiles-heading">Released User Bonuses</div>
+                                    <div class="tiles-body-alt">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <div class="text-center"><span class="text-top">₦</span></div>
+                                        <small>User bonuses released</small>
+                                    </div>
+                                    <div class="tiles-footer">manage orders</div>
+                                </a>
+                            </div>
+    
+                             <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-orange" href="#">
+                                    <div class="tiles-heading">Members</div>
+                                    <div class="tiles-body-alt">
+                                        <i class="fa fa-group"></i>
+                                        <div class="text-center">#</div>
+                                        <small>users registered</small>
+                                    </div>
+                                    <div class="tiles-footer"> manage members</div>
+                                </a>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-toyo" href="#">
+                                    <div class="tiles-heading">Total Referral</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-bar-chart-o"></i-->
+                                        <div class="text-center"><span class="text-top">₦</span></div>
+                                        <small>Total Referral Bonus</small>
+                                    </div>
+                                    <div class="tiles-footer">more info</div>
+                                </a>
+                            </div> 
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-toyo" href="#">
+                                    <div class="tiles-heading">Company Earnings</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-bar-chart-o"></i-->
+                                        <div class="text-center">
+                                            <span class="text-top">₦</span>
+                                        </div>
+                                         <small>Total Referral Bonus</small>
+                                    </div>
+                                     <div class="tiles-footer">more info</div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-success" href="#">
+                                    <div class="tiles-heading">Total Matrix Bonus</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-money"></i-->
+                                        <div class="text-center"><span class="text-top">₦</span> </div>
+                                        <small>Total Matrix Bonus Bonus</small>
+                                    </div>
+                                    <div class="tiles-footer">go to accounts</div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-success" href="#">
+                                    <div class="tiles-heading">Actual Payout</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-money"></i-->
+                                        <div class="text-center">
+                                            <span class="text-top">₦</span>
+                                        </div>
+                                        <small>Total Matrix Bonus Bonus</small> 
+                                    </div>
+                                    <div class="tiles-footer">go to accounts</div>
+                                </a>
+                            </div>
+    
+                             <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-alizarin" href="#">
+                                    <div class="tiles-heading">Total Step Out Bonus</div>
+                                    <div class="tiles-body-alt">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <div class="text-center"><span class="text-top">₦</span></div>
+                                        <small>Total Step Out Bonus </small>
+                                    </div>
+                                    <div class="tiles-footer">manage orders</div>
+                                </a>
+                            </div>
+    
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-alizarin" href="#">
+                                    <div class="tiles-heading">Payout Sum</div>
+                                    <div class="tiles-body-alt">
+                                         <i class="fa fa-shopping-cart"></i> 
+                                        <div class="text-center">
+                                            <span class="text-top">₦</span>
+                                        </div>
+                                        <small>Total Step Out Bonus </small>
+                                    </div>
+                                    <div class="tiles-footer">manage orders</div>
+                                </a>
+                            </div>
+    
+                             <div class="col-md-3 col-xs-12 col-sm-6">
+                                <a class="info-tiles tiles-orange" href="#">
+                                    <div class="tiles-heading">Product Company Sum</div>
+                                    <div class="tiles-body-alt">
+                                         <i class="fa fa-group"></i> 
+                                        <div class="text-center">
+                                            <span class="text-top">₦</span>
+                                         </div>
+                                        <small>new users registered</small> 
+                                    </div>
+                                    <div class="tiles-footer"> manage members</div> 
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-3 col-xs-12 col-sm-6">
+                              <a class="info-tiles tiles-toyo" href="#">
+                                  <div class="tiles-heading">Product Company Sum</div>
+                                  <div class="tiles-body-alt">
+                                       <i class="fa fa-group"></i> 
+                                      <div class="text-center">
+                                          <span class="text-top">₦</span>
+                                       </div>
+                                      <small>new users registered</small> 
+                                  </div>
+                                  <div class="tiles-footer"> manage members</div> 
+                              </a>
+                          </div>
+
+
+
+                          <div class="col-md-3 col-xs-12 col-sm-6">
+                            <a class="info-tiles tiles-alizarin" href="#">
+                                <div class="tiles-heading">Payout Sum</div>
+                                <div class="tiles-body-alt">
+                                     <i class="fa fa-shopping-cart"></i> 
+                                    <div class="text-center">
+                                        <span class="text-top">₦</span>
+                                    </div>
+                                    <small>Total Step Out Bonus </small>
+                                </div>
+                                <div class="tiles-footer">manage orders</div>
+                            </a>
+                        </div>
+
+                         <div class="col-md-3 col-xs-12 col-sm-6">
+                            <a class="info-tiles tiles-orange" href="#">
+                                <div class="tiles-heading">Product Company Sum</div>
+                                <div class="tiles-body-alt">
+                                     <i class="fa fa-group"></i> 
+                                    <div class="text-center">
+                                        <span class="text-top">₦</span>
+                                     </div>
+                                    <small>new users registered</small> 
+                                </div>
+                                <div class="tiles-footer"> manage members</div> 
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                          <a class="info-tiles tiles-toyo" href="#">
+                              <div class="tiles-heading">Product Company Sum</div>
+                              <div class="tiles-body-alt">
+                                   <i class="fa fa-group"></i> 
+                                  <div class="text-center">
+                                      <span class="text-top">₦</span>
+                                   </div>
+                                  <small>new users registered</small> 
+                              </div>
+                              <div class="tiles-footer"> manage members</div> 
+                          </a>
+                      </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+               
+  
+    
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12 clearfix">
+                                        <h4 class="pull-left" style="margin: 0 0 20px;">User Report <small>(weekly)</small></h4>
+                                        <div class="btn-group pull-right">
+                                            <a href="javascript:;" class="btn btn-default btn-sm active">this week</a>
+                                            <a href="javascript:;" class="btn btn-default btn-sm ">previous week</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div id="site-statistics" style="height:250px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-grape">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12 clearfix">
+                                        <h4 class="pull-left" style="margin: 0 0 20px;">Annual Sales <small>(by quarter)</small></h4>
+                                        <div class="btn-group pull-right">
+                                            <a href="javascript:;" class="btn btn-default btn-sm active">2012</a>
+                                            <a href="javascript:;" class="btn btn-default btn-sm ">2011</a>
+                                            <a href="javascript:;" class="btn btn-default btn-sm ">2010</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div id="budget-variance" style="height:250px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12 clearfix">
+                                        <h4 class="pull-left" style="margin:0 0 10px">Site Reports <small>(overview)</small></h4>
+                                        <div class="pull-right">
+                                            <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-refresh"></i></a>
+                                            <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-wrench"></i></a>
+                                            <a href="javascript:;" class="btn btn-default-alt btn-sm"><i class="fa fa-cog"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexvisits" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">7,451</h3>
+                                        <p style="text-align: center; margin: 0;">Visits</p>
+                                        <hr class="hidden-md hidden-lg">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexpageviews" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">35,711</h3>
+                                        <p style="text-align: center; margin: 0;">Page Views</p>
+                                        <hr class="hidden-md hidden-lg">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexpagesvisit" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">6.92</h3>
+                                        <p style="text-align: center; margin: 0;">Pages / Visit</p>
+                                        <hr class="hidden-md hidden-lg">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexavgvisit" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">00:04:17</h3>
+                                        <p style="text-align: center; margin: 0;">Average Visit Time</p>
+                                        <hr class="hidden-md hidden-lg">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexnewvisits" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">71.27%</h3>
+                                        <p style="text-align: center; margin: 0;">New Visits</p>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-2">
+                                        <div id="indexbouncerate" style="width: 90px; margin: 0 auto; padding: 10px 0 6px;"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        <h3 style="text-align: center; margin: 0; color: #808080;">31.08%</h3>
+                                        <p style="text-align: center; margin: 0;">Bounce Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-indigo">
+                            <div class="panel-heading">
+                                <h4>User Accounts</h4>
+                                <div class="options">
+                                    <a href="javascript:;"><i class="fa fa-cog"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-wrench"></i></a>
+                                    <a href="javascript:;" class="panel-collapse"><i class="fa fa-chevron-down"></i></a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table" style="margin-bottom: 0px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-xs-1 col-sm-1"><input type="checkbox" id="select-all"></th>
+                                                <th class="col-xs-9 col-sm-3">User ID</th>
+                                                <th class="col-sm-6 hidden-xs">Email Address</th>
+                                                <th class="col-xs-2 col-sm-2">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="selects">
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>cranston</td>
+                                                <td class="hidden-xs">cranstonb@gnail.com</td>
+                                                <td><span class="label label-success">Approved</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>aaron</td>
+                                                <td class="hidden-xs">ppaul@lime.com</td>
+                                                <td><span class="label label-grape">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>norris</td>
+                                                <td class="hidden-xs">j.norris@gnail.com</td>
+                                                <td><span class="label label-warning">Suspended</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>gunner</td>
+                                                <td class="hidden-xs">gunner@outluk.com</td>
+                                                <td><span class="label label-danger">Blocked</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>mrford</td>
+                                                <td class="hidden-xs">fordm@gnail.com</td>
+                                                <td><span class="label label-grape">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" class=""></td>
+                                                <td>stewrtt</td>
+                                                <td class="hidden-xs">swttrs@outluk.com</td>
+                                                <td><span class="label label-danger">Blocked</span></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="active">
+                                                <td colspan="4" class="text-left">
+                                                    <label for="action" style="margin-bottom:0"> Action </label>
+                                                    <select name="action">
+                                                        <option value="Edit">Edit</option>
+                                                        <option value="Aprove">Aprove</option>
+                                                        <option value="Move">Move</option>
+                                                        <option value="Delete">Delete</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <div class="panel panel-grape">
+                            <div class="panel-heading">
+                                  <h4><i class="icon-highlight fa fa-check"></i> To-do List</h4>
+    
+                            </div>
+                            <div class="panel-body">
+                                <ul class="panel-tasks">
+                                    <li class="item-danger">
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Write documentation for theme</span>
+                                            <span class="label label-info">6 Days</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-primary">
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Compile code</span>
+                                            <span class="label label-primary">3 Days</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-info">
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Upload files to server</span>
+                                            <span class="label label-orange">Tomorrow</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-success">
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Call client</span>
+                                            <span class="label label-danger">Today</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Buy some milk</span>
+                                            <span class="label label-danger">Today</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Setup meeting with client</span>
+                                            <span class="label label-sky">2 Weeks</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <i class="fa fa-ellipsis-v icon-dragtask"></i>
+                                            <input type="checkbox">
+                                            <span class="task-description">Pay office rent and bills</span>
+                                            <span class="label label-sky">3 Weeks</span>
+                                        </label>
+                                        <div class="options todooptions">
+                                            <div class="btn-group">
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-default btn-xs"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>
+                                    </li>
+    
+                                </ul>
+                                <a href="#" class="btn btn-success btn-sm pull-left">Add Tasks</a>
+                                <a href="#" class="btn btn-default-alt btn-sm pull-right">See All Tasks</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+    
+    
+    
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div> <!-- page-content -->
+
+    
+
+
+<script type='text/javascript' src=' { % static  "plugins/fullcalendar/js/main.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/form-daterangepicker/daterangepicker.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/form-daterangepicker/moment.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/charts-flot/jquery.flot.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/charts-flot/jquery.flot.resize.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/charts-flot/jquery.flot.orderBars.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "plugins/pulsate/jQuery.pulsate.min.js"}'></script>
+<script type='text/javascript' src=' { % static  "demo/demo-index.js" %}'></script>
+
+</body>
+
+</html>
+
+ 
+
+
+
+
+
+

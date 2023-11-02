@@ -1,0 +1,162 @@
+{% include "AdminLayouts/app.html" %}
+{% load static %}
+
+
+    <link rel='stylesheet' type='text/css' href="{% static 'plugins/datatables/dataTables.css'%}" />
+    <style>
+        .modal-dialog-centered{
+            margin-top: 190px
+        }
+
+        .product-thumbnail{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .deleted-row {
+            text-decoration: line-through;
+            background-color: red;
+        }
+
+    </style>
+
+
+    <div id="page-content">
+        <div id='wrap'>
+            <div id="page-heading">
+                <ol class="breadcrumb">
+                    <li><a href="">Payment</a></li>
+                </ol>
+
+                <h1>Payments</h1>
+
+            </div>
+
+            <div class="container">
+
+              
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Payment</h4>
+                                <div class="options">
+
+                                </div>
+                            </div>
+                            <div class="panel-body">
+
+                                <form class="form-horizontal" action="{{ url('admin/payment') }}"  method="POST"  >
+                                    {{ csrf_field() }}
+
+                                    <button type="submit" class="btn btn-success" name="zenith">Pay Selected List (Zenith)</button>
+                                    <button type="submit" class="btn btn-success" name="uba">Pay Selected List (UBA)</button>
+                                    <br/> <br/>
+
+                                    <table class="table table-bordered table-hover table-striped  datatables" id="example">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" name="toggle" value="" id="selectAll" /></th>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Amount</th>
+                                        <th>Details</th>
+                                        <th>Bank</th>
+                                        <th>Status</th>
+                                        <th>Type</th>
+                                        <th>Payment Due Date</th>
+                                        <th>Date Paid</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>     <tr>
+                                            <td>
+                                               
+                                                    <input type="checkbox" id="cb0" name="" value="" class="checkbox_list" />
+                                         
+                                           
+                                            </td>
+                                            <td>
+                                               
+                                                    <span class="label label-warning">pending</span>
+                                                
+                                                    <span class="label label-success">paid</span>
+                                             
+                                                    <span class="label label-danger">flushed</span>
+                                            
+                                                    <span class="label label-danger">carry forward</span>
+                                               
+                                                    <span class="label label-warning">status  </span>
+                                           
+                                            </td>
+                                           
+                                            
+                                            <td>
+                                                <a  class="btn btn-primary btn-xs" href="">View</a>
+                                            </td>
+                                        </tr>
+                                
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div> <!-- container -->
+        </div> <!--wrap -->
+    </div>
+
+    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js'% }"></script>
+    <script src="{% static 'plugins/datatables/dataTables.bootstrap.js'%}"></script>
+
+    <script>
+
+        // -------------------------------
+        // Initialize Data Tables
+        // -------------------------------
+
+        $(document).ready(function() {
+            $('.datatables').dataTable({
+                "sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page",
+                    "sSearch": ""
+                }
+            });
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search...');
+            $('.dataTables_length select').addClass('form-control');
+        });
+
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+        $('#selectAll').click(function(e) {
+            if($(this).hasClass('checkedAll')) {
+                $('input').prop('checked', false);
+                $(this).removeClass('checkedAll');
+            } else {
+                $('input').prop('checked', true);
+                $(this).addClass('checkedAll');
+            }
+        });
+
+
+
+    </script>
+
+
+
+
